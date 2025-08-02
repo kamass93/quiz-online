@@ -20,7 +20,7 @@ def main():
         translations = json.load(f)
 
     bot = TelegramQuizBot(telegram_token=os.getenv('TELEGRAM_TOKEN'),
-                          allowed_handles=os.getenv('ALLOWED_HANDLES').split(','),
+                          allowed_handles=os.getenv('ALLOWED_HANDLES', '*').split(',')
                           words_list=words,
                           translations=translations)
     
